@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        body {
+            background-color: #ffffff;
+        }
+        div.nav-bar {
+            /* background-color: black; */
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        div.nav-bar>img {
+            margin: 10px;
+            padding: 20px;
+            height: 55px;
+            width: 55px;
+        }
+        div.nav-bar>ul>li>a {
+            text-transform: uppercase;
+            color: gray;
+            transition-duration: 500ms;
+            transition-timing-function: ease-out;
+            transition-delay: 90ms;
+            display: block;
+        }
+        div.nav-bar>ul>li>a:hover {
+            color: black;
+            font-size: 20px;
+            /* transform: scale(1.2); */
+        }
+
+        div.nav-bar>ul>li {
+            display: inline-block;
+            padding: 20px;
+        }
+        #nav-contact {
+            padding: 10px;
+        }
+        header>nav>div>ul>li>div.dropdown>ul>li>a {
+            text-align: left;
+            color: black;
+            padding: 12px 16px;
+            display: block;
+            text-transform: uppercase;
+            color: gray;
+            transition-duration: 500ms;
+            transition-timing-function: ease-out;
+            transition-delay: 90ms;
+        }
+        header>nav>div>ul>li>div.dropdown {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: 250px;
+            box-shadow: 2px 8px 16px 2px black;
+            z-index: 1;
+            padding-top: 10px;
+        }
+        li.li-dropdown:hover #a2{
+            margin-bottom: 10px;
+        }
+        li.li-dropdown:hover div.dropdown{
+            display: block;
+        }
+        div.dropdown>ul>li>a:hover {
+            color: black;
+            /* font-size: 18px; */
+            transform: scale(1.05);
+        }
+        main>div {
+            /* background-color: yellow;
+            border: 2px solid red; */
+            width: 95%;
+            height: 95%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 20px;
+        }
+        main>div>div#card {
+            /* background-color: blue;
+            border: 2px solid black; */
+            height: 500px;
+            width: 400px;
+            margin: 20px 20px 29px 20px;
+            border-radius: 10px;
+            transition: 1s;
+            transition-delay: 100ms;
+        }
+        main>div>div#card:hover {
+            transform: scale(1.09);
+            opacity: 0.7;
+        }
+        main>div>div#card>img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        main>div>div>div#card-content>p {
+            padding: 3px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #card-content>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7px;
+        }
+        #card-content>div>span:nth-of-type(odd) {
+            color: red;
+        }
+        #card-content>div>span:nth-of-type(even) {
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+        div.footer {
+            height: 500px;
+            width: 100%;
+            /* background-color: yellow; */
+            background-image: url(https://res.cloudinary.com/dtwsktjgj/image/upload/v1761603143/footer_img_jlquzp.png);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div.footer>div.foot-card {
+            position: absolute;
+        }
+        div.footer>div#cd1 {
+            height: 400px;
+            width: 400px;
+            background-color: aqua;
+            left: 100px;
+        }
+        div.footer>div#cd2 {
+            height: 400px;
+            width: 250px;
+            background-color: aqua;
+            right: 400px;
+        }
+        div.footer>div#cd3 {
+            height: 400px;
+            width: 250px;
+            background-color: aqua;
+            right: 100px;
+            /* top: 1780px; */
+        }
+        div.bottom-card {
+            height: 30px;
+            width: 100%;
+            background-color: rgb(215,154,52);
+            position: relative;
+            bottom: -235px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-bar">
+                <img src="/logo.png" alt="logo">
+                <ul>
+                    <li> 
+                        <a href="#" id="a1">home</a> 
+                    </li>
+                    <li class="li-dropdown"> 
+                        <a href="#" id="a2">bbq recipes</a>
+                            <div class="dropdown">
+                            <ul class="nav-bar-dropdown">
+                                <li><a href="#" id="drop-down">Cooking Method</a></li><hr>
+                                <li><a href="#" id="drop-down">Cooking Method</a></li><hr>
+                                <li><a href="#" id="drop-down">Cuisine</a></li><hr>
+                                <li><a href="#" id="drop-down">Protein</a></li><hr>
+                                <li><a href="#" id="drop-down">Search BBQ Recipes</a></li>
+                            </ul>
+                            </div>
+                    </li>
+                    <li> <a href="#" id="a3">hub</a> </li>
+                    <li> <a href="#" id="a4">about</a> </li>
+                    <li> <a href="#" id="a5">contact</a> </li>
+                    <li id="nav-contact"> <a href="#" class="fa fa-facebook"></a> </li>
+                    <li id="nav-contact"> <a href="#" class="fa fa-instagram"></a> </li>
+                    <li id="nav-contact"> <a href="#" class="fa fa-whatsapp"></a> </li>
+                    <li id="nav-contact"> <a href="#" class="fa fa-youtube"></a> </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <div class="main-content">
+            
+            <div id="card">
+                <img src="https://images.stockcake.com/public/8/0/8/808f024a-88ca-402d-acb8-67fd4195fc8a_large/grilled-tofu-skewers-stockcake.jpg" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>Smoky Spiced Tandoori Paneer Skewers with Mint Chutney Drizzle.</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="card">
+                <img src="https://cdn.pixabay.com/photo/2024/05/18/16/47/salmon-8770632_1280.png" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>Honey-Glazed Cedar Plank Salmon, Infused with Aromatic Dill and LemonE</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="card">
+                <img src="https://www.budgetbytes.com/wp-content/uploads/2025/07/Smoky-Sesame-Grilled-Mushroom-Kebabs-Macro-500x500.jpg" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>Smoky Grilled Portobello Mushrooms, Stuffed with Melted Cheese.</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="card">
+                <img src="https://thecrumbykitchen.com/wp-content/uploads/2018/06/BBQ-Grilled-Chicken-Leg-Quarters-1-500x500.jpg" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>LMaple-Chipotle Glazed Smoked Chicken, Served with Crispy Onion Hay.</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="card">
+                <img src="https://www.jessicagavin.com/wp-content/uploads/2019/07/grilled-salmon-4-1200-500x500.jpg" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>Honey-Glazed Cedar Plank Salmon, Infused with Aromatic Dill and Lemon.</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="card">
+                <img src="https://res.cloudinary.com/dtwsktjgj/image/upload/v1761599662/panner-box-img_sqglgi.png" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>Robustly Marinated Paneer, Tandoor-Roasted to Perfection, Served with Cilantro.</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="card">
+                <img src="https://plantifullybasedblog.com/wp-content/uploads/2024/06/corn-.png" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>Sweet Grilled Corn on the Cob with Smoked Paprika Butter.</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="card">
+                <img src="https://res.cloudinary.com/dtwsktjgj/image/upload/v1761600208/Grilled-Pineapple-6_spyrrn.jpg" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>Grilled Pineapple Slices, Dusted with Cinnamon and Brown Sugar</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="card">
+                <img src="https://res.cloudinary.com/dtwsktjgj/image/upload/v1761600498/bbq_platter_hpskoe.png" alt="bbq-recipes">
+                <div id="card-content">
+                    <p>The Grand Sunset Grille Feast Chicken, and Veg Delights.</p>
+                    <div>
+                    <span class="material-icons">alarm</span>
+                    <span>7 hrs 30 mins</span>
+                    <span class="material-icons">layers</span>
+                    <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="foot-card" id="cd1"></div>
+            <div class="foot-card" id="cd2"></div>
+            <div class="foot-card" id="cd3"></div>
+            <div class="bottom-card"></div>
+        </div>
+    </footer>
+</body>
+</html>
