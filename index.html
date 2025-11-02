@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            list-style: none;
-        }
-        body {
-            background-color: #ffffff;
-        }
-        div.nav-bar {
-            /* background-color: black; */
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                list-style: none;
+            }
+            body {
+                background-color: #ffffff;
+            }
+            div.nav-bar {
+                /* background-color: black; */
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter:blur(7px);
             height: 60px;
+            width: 100%;
             display: flex;
             align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 999;
         }
-        div.nav-bar>img {
+        div.nav-bar>a>img {
             margin: 10px;
             padding: 20px;
             height: 55px;
@@ -30,11 +36,13 @@
         }
         div.nav-bar>ul>li>a {
             text-transform: uppercase;
-            color: gray;
+            color: rgb(60, 57, 57);
             transition-duration: 500ms;
             transition-timing-function: ease-out;
             transition-delay: 90ms;
             display: block;
+            font-weight: 550;
+            letter-spacing: 2px;
         }
         div.nav-bar>ul>li>a:hover {
             color: black;
@@ -86,6 +94,8 @@
             width: 95%;
             height: 95%;
             margin: auto;
+            margin-top: 50px;
+            margin-bottom: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -94,16 +104,18 @@
         main>div>div#card {
             /* background-color: blue;
             border: 2px solid black; */
-            height: 500px;
-            width: 400px;
-            margin: 20px 20px 29px 20px;
+            height: 600px;
+            width: 500px;
+            margin: 20px 35px 30px 20px;
             border-radius: 10px;
             transition: 1s;
             transition-delay: 100ms;
+            box-sizing: content-box;
         }
         main>div>div#card:hover {
             transform: scale(1.09);
             opacity: 0.7;
+            box-shadow: 6px 6px 9px gray;
         }
         main>div>div#card>img {
             width: 100%;
@@ -144,19 +156,19 @@
         div.footer>div#cd1 {
             height: 400px;
             width: 400px;
-            background-color: aqua;
+            /* background-color: aqua; */
             left: 100px;
         }
         div.footer>div#cd2 {
             height: 400px;
             width: 250px;
-            background-color: aqua;
-            right: 400px;
+            /* background-color: aqua; */
+            right: 400px;            
         }
         div.footer>div#cd3 {
             height: 400px;
             width: 250px;
-            background-color: aqua;
+            /* background-color: aqua; */
             right: 100px;
             /* top: 1780px; */
         }
@@ -167,13 +179,87 @@
             position: relative;
             bottom: -235px;
         }
+        div.footer>div.foot-card>h4 {
+            text-align: center;
+            padding: 10px;
+            color: white;
+            margin-bottom: 30px;
+        }
+        div.footer>div.foot-card>ul>li>a {
+            color: rgb(194, 188, 188);
+            display: block;
+            text-transform: capitalize;
+            margin: 4px 2px 10px 91px;
+            padding: 5px;
+            font-weight: 500;
+            transition: 900ms;
+            transition-delay: 100ms;
+        }
+        div.footer>div.foot-card>ul>li>a:hover {
+            transform: scale(1.09);
+            text-decoration: underline;
+            color: white;
+        }
+        div.footer>div#cd1>a>img {
+            height: 207px;
+            width: 190px;
+            display: block;
+            margin: auto;
+            filter: drop-shadow(10px 10px 10px black);
+        }
+        div.footer>div#cd1>div#inside-cd1 {
+            height: 183px;
+            width: 400px;
+            /* background-color: red; */
+            margin: 10px 0 0 0;
+        }
+        div#inside-cd1>p {
+            color: white;
+            font-family: "Apple Chancery";
+            padding: 15px;
+            font-size: 18px;
+            word-spacing: 4px;
+         }
+        #footer-contact {
+            display: inline-block;
+        }
+        .foot {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 50px;
+            width: 100%;
+            /* background-color: violet;  */
+        }
+        li#footer-contact>a {
+            color: white;
+            display: block;
+            font-size: 20px;
+            padding: 15px;
+        }
+        div.foot>ul>li>a:hover {
+            background: rgb(161, 158, 158);
+            color: white;
+            width: 15px;
+            height: 15px;
+            border-radius: 75%;
+            padding: 15px;
+            margin: 4px;
+            text-align: center;
+        }
+        .bottom-card {
+            display: flex;
+            font-size: 24px;
+            justify-content: space-evenly;
+            text-transform: capitalize;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-bar">
-                <img src="/logo.png" alt="logo">
+                <a href="/index.html" target="_self"><img src="https://res.cloudinary.com/dtwsktjgj/image/upload/v1762072218/logo_cj3nvz.png" alt="logo"></a>
                 <ul>
                     <li> 
                         <a href="#" id="a1">home</a> 
@@ -201,7 +287,7 @@
             </div>
         </nav>
     </header>
-    <hr>
+    <!-- <hr> -->
     <main>
         <div class="main-content">
             
@@ -273,7 +359,7 @@
             <div id="card">
                 <img src="https://res.cloudinary.com/dtwsktjgj/image/upload/v1761599662/panner-box-img_sqglgi.png" alt="bbq-recipes">
                 <div id="card-content">
-                    <p>Robustly Marinated Paneer, Tandoor-Roasted to Perfection, Served with Cilantro.</p>
+                    <p>Robustly Marinated Paneer, Roasted to Perfection, Served with Cilantro.</p>
                     <div>
                     <span class="material-icons">alarm</span>
                     <span>7 hrs 30 mins</span>
@@ -325,10 +411,45 @@
     </main>
     <footer>
         <div class="footer">
-            <div class="foot-card" id="cd1"></div>
-            <div class="foot-card" id="cd2"></div>
-            <div class="foot-card" id="cd3"></div>
-            <div class="bottom-card"></div>
+            <div class="foot-card" id="cd1">
+                <a href="/index.html" target="_self"><img src="https://res.cloudinary.com/dtwsktjgj/image/upload/v1762072218/logo_cj3nvz.png" alt="logo" ></a>
+                <div id="inside-cd1">
+                    <p>BBQ Recipes is my passion project, born during the 2020 lockdown. It’s where I share mouth-watering BBQ recipes, tips, and everything I’ve learned about cooking over fire.</p>
+                    <div class="foot">
+                        <ul>
+                            <li id="footer-contact"> <a href="#" id="footer-logo fb" class="fa fa-facebook"></a> </li>
+                            <li id="footer-contact"> <a href="#" id="footer-logo insta" class="fa fa-instagram"></a> </li>
+                            <li id="footer-contact"> <a href="#" id="footer-logo yt" class="fa fa-youtube"></a> </li>
+                            <li id="footer-contact"> <a href="#" id="footer-logo wp" class="fa fa-whatsapp"></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="foot-card" id="cd2">
+                <h4>Site Map</h4>
+                <ul>
+                    <li><a href="#">home page</a></li>
+                    <li><a href="#">bbq recipes</a></li>
+                    <li><a href="#">hub</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">contact us</a></li>
+                    <li><a href="#">support</a></li>
+                </ul>
+            </div>
+            <div class="foot-card" id="cd3">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">terms of service</a></li>
+                    <li><a href="#">cookies</a></li>
+                </ul>
+            </div>
+            <div class="bottom-card">
+                <p>name-shubh ansh kesharwani</p>
+                <p>batch-neumann</p>           
+                <p>lab-architechture</p>
+            </div>
         </div>
     </footer>
 </body>
